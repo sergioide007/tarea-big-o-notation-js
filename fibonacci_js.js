@@ -4,8 +4,6 @@ function main() {
     var secuencia = [];
 		for (var i = 0; i <= 45; i++) {
 			try {
-				//long fibonacci = exponential.fibonacci(i);
-				//System.out.println(i + " => " + fibonacci);
 				var fibonacci = fibonacciLineal(i, secuencia);
 				document.getElementById("fibonacci").innerHTML += "<p>"+ i + " => " + fibonacci +"<p/>";
 			} catch (e) {
