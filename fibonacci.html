@@ -1,49 +1,9 @@
 <!DOCTYPE html>
 <html>
-<body>
-
-<p>Click en el boton para mostrar la serie fibonacci</p>
-
-<button onclick="main()">Test fibonacci</button>
-
-<p id="fibonacci"></p>
-
-
-<script>
-
-
-function main() {
-		var inicio = Date.now();
-    var secuencia = [];
-		for (var i = 0; i <= 45; i++) {
-			try {
-				//long fibonacci = exponential.fibonacci(i);
-				//System.out.println(i + " => " + fibonacci);
-				var fibonacci = fibonacciLineal(i, secuencia);
-				document.getElementById("fibonacci").innerHTML += "<p>"+ i + " => " + fibonacci +"<p/>";
-			} catch (e) {
-				console.log("error: "+e);
-			}
-        }
-        document.getElementById("fibonacci").innerHTML += "<p>" + "Time elapsed: " + (Date.now() - inicio)/1000 + " seconds. </p>";
-		
-}
-
-function fibonacciLineal(i, secuencia) {		
-		if (i == 0) {
-		    secuencia[i - 1] = 0;
-		} else {
-		    if (i - 1 <= 1) {
-			secuencia[i - 1] = 1;
-		    } else {
-			secuencia[i - 1] = secuencia[i - 2] + secuencia[i - 3];
-		    }
-		}
-		return secuencia[i - 1];			
-
-} 
-
-</script>
-
+<head>
+	<script type="text/javascript" src="fibonacci_js.js"></script>
+</head>
+<body onload="main()">
+	<p id="fibonacci"></p>
 </body>
 </html>
